@@ -12,7 +12,7 @@ The action will set the "fix version" in Jira to the given version (and creates 
 - `versionName`: The name of the Version to use (e.g. "1.0.5")
 - `issueKeys`: The key(s) of the issue(s) that is to be updated. If multiple are used, separate them with a comma (e.g. "TEST-1,TEST-2")
 - `versionDescription`: The description of the Version (default: "CD version")
-- `versionArchived`: Mark the new version as archived (default: true)
+- `release`: Automatically release the version (default: false)
 
 ## Outputs
 None
@@ -28,6 +28,7 @@ with:
   versionName: "1.0.5"
   versionDescription: "Continuous Delivery Version"
   issueKeys: "TEST-1"
+  release: true
 ```
 
 ### Usage with "GLIX Action – the Git Log Identifier eXtractor"
@@ -54,6 +55,7 @@ for all those Jira issues.
       versionName: "1.0.5"
       versionDescription: "Continuous Delivery Version"
       issueKeys: ${{ steps.glix.outputs.issueKeys }}
+      release: true
 ```
 
 
@@ -77,4 +79,5 @@ The regex is based on [Atlassian Documentation](https://confluence.atlassian.com
           versionName: "1.0.5"
           versionDescription: "Continuous Delivery Version"
           issueKeys: ${{ steps.regex-match.outputs.match }}
+          release: true
 ```

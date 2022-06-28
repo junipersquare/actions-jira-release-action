@@ -1,5 +1,5 @@
-name: 'Jira create and set fix version'
-description: 'Intended for CD, this action creates and sets the given version as fix version in Jira Cloud for given issue'
+name: 'Jira Release Action'
+description: 'A Github Action that creates Jira version, sets the given version as a fix version for provided issues, and releases the version'
 branding:
   icon: "cloud"
   color: "blue"
@@ -23,8 +23,8 @@ inputs:
   versionDescription:
     description: 'The description of the Version (default: "CD version")'
     required: false
-  versionArchived:
-    description: 'Mark the new version as archived (default: true)'
+  release:
+    description: 'Automatically release the version (default: false)'
     required: false
 runs:
   using: 'node16'
