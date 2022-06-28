@@ -52,7 +52,7 @@ async function releaseVersion(versionId) {
     const date = new Date().toISOString().substring(0,10);
     await jira.updateVersion({
         id: versionId,
-        released: false,
+        released: true,
         releaseDate: date
     });
 }
